@@ -1,13 +1,13 @@
 class DigimonService {
   constructor() {
-    this.baseURL = "https://localhost:3000/api/v1/digimon";
+    this.baseURL = 'http://localhost:3000/api/v1/digimon';
     this.getRequestHeaders = new Headers({
-      "Content-Type": "application/json"
+      'Content-Type': 'application/json',
     });
 
     this.getRequestConfig = {
-      method: "GET",
-      headers: this.getRequestHeaders
+      method: 'GET',
+      headers: this.getRequestHeaders,
     };
   }
 

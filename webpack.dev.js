@@ -17,7 +17,7 @@ module.exports = {
   devServer: {
     contentBase: path.join(__dirname, 'dist'),
     compress: false,
-    port: 3000,
+    port: 3001,
     hot: true,
     open: true,
   },
@@ -51,6 +51,7 @@ module.exports = {
                 '@babel/preset-env',
                 '@babel/preset-react',
               ],
+              plugins: ['@babel/plugin-transform-runtime'],
             },
           },
         ],
