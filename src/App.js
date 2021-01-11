@@ -15,13 +15,9 @@ const App = () => {
   const isLoadingInitialDigimons = useSelector(selectIsLoadingInitial);
   const dispatch = useDispatch();
 
-  console.log('Rendering <APP>...');
-
   useEffect(() => {
     dispatch(requestInitialDigimons());
   }, []);
-
-  console.log({ initialDigimons, isLoadingInitialDigimons });
 
   const renderInitialLoadingIndicator = () => (
     <progress className="progress is-info" max="100" />
