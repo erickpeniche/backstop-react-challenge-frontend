@@ -1,0 +1,55 @@
+const path = require('path');
+// eslint-disable-next-line import/no-extraneous-dependencies
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+// eslint-disable-next-line import/no-extraneous-dependencies
+const ESLintPlugin = require('eslint-webpack-plugin');
+// eslint-disable-next-line import/no-extraneous-dependencies
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+
+module.exports = {
+  mode: 'production',
+  entry: {
+    main: './src/index.js',
+  },
+  output: {
+    filename: '[name].bundle.js',
+    path: path.resolve(__dirname, 'dist'),
+  },
+  plugins: [
+    new CleanWebpackPlugin(),
+    new HtmlWebpackPlugin({
+      template: './src/index.html',
+    }),
+    new ESLintPlugin({
+      extensions: ['js', 'sass'],
+      fix: true,
+    }),
+  ],
+  module: {
+    rules: [
+      {
+        test: /\.scss$/,
+        use: [
+          'style-loader',
+          'css-loader',
+          'sass-loader',
+        ],
+      },
+      {
+        test: /\.js$/,
+        exclude: /(node_modules|bower_components)/,
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              presets: [
+                '@babel/preset-env',
+                '@babel/preset-react',
+              ],
+            },
+          },
+        ],
+      },
+    ],
+  },
+};
