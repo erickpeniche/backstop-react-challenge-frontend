@@ -9,11 +9,14 @@ const DigimonCard = (props) => {
       <div className="digimonCard__imgContainer">
         <img src={img} alt="Digimon" className="digimonCard__img" />
         <div className="digimonCard__levelContainer">
-          <span className="digimonCard__level">{level}</span>
+          <span className="digimonCard__level">
+            {level}
+            {' '}
+            Level
+          </span>
         </div>
         <span className="digimonCard__name">{name}</span>
       </div>
-      <div className="digimonCard__info" />
     </div>
   );
 };
