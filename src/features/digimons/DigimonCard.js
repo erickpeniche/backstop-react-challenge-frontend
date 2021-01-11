@@ -1,5 +1,5 @@
 import React from 'react';
-import { number, string } from 'prop-types';
+import { string } from 'prop-types';
 
 const DigimonCard = (props) => {
   const { name, img, level } = props;
@@ -7,7 +7,7 @@ const DigimonCard = (props) => {
   return (
     <div className="digimonCard box">
       <div className="digimonCard__imgContainer">
-        <img src={img} alt="Digimon Picture" className="digimonCard__img" />
+        <img src={img} alt="Digimon" className="digimonCard__img" />
         <div className="digimonCard__levelContainer">
           <span className="digimonCard__level">{level}</span>
         </div>
@@ -20,7 +20,6 @@ const DigimonCard = (props) => {
 
 DigimonCard.propTypes = {
   name: string.isRequired,
-  id: number,
   img: string.isRequired,
   level: string.isRequired,
 };

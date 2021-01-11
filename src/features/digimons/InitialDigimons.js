@@ -9,7 +9,16 @@ const InitialDigimons = (props) => {
 
   return (
     <div className="digimons__container">
-      {digimons.map((digimon, idx) => (<DigimonCard key={idx} {...digimon} />))}
+      {digimons.map(({
+        id, name, level, img,
+      }) => (
+        <DigimonCard
+          key={id}
+          name={name}
+          level={level}
+          img={img}
+        />
+      ))}
     </div>
   );
 };

@@ -8,6 +8,7 @@ import {
 } from './features/digimons/digimonsSlice';
 import Header from './features/header/Header';
 import InitialDigimons from './features/digimons/InitialDigimons';
+import RandomDigimon from './features/digimons/RandomDigimon';
 
 const App = () => {
   const initialDigimons = useSelector(selectInitialDigimons);
@@ -23,7 +24,7 @@ const App = () => {
   console.log({ initialDigimons, isLoadingInitialDigimons });
 
   const renderInitialLoadingIndicator = () => (
-    <progress className="progress is-danger" max="100" />
+    <progress className="progress is-info" max="100" />
   );
 
   return (
@@ -32,6 +33,7 @@ const App = () => {
       <main className="app__content">
         {isLoadingInitialDigimons && renderInitialLoadingIndicator()}
         {!isLoadingInitialDigimons && <InitialDigimons digimons={initialDigimons} />}
+        <RandomDigimon />
       </main>
     </div>
   );
