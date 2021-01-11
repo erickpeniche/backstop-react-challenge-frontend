@@ -23,6 +23,7 @@ module.exports = {
     new ESLintPlugin({
       extensions: ['js', 'sass'],
       fix: true,
+      failOnError: true,
     }),
   ],
   module: {
