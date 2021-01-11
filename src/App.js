@@ -6,6 +6,7 @@ import {
   requestInitialDigimons,
   // selectError,
 } from './features/digimons/digimonsSlice';
+import Header from './features/header/Header';
 
 const App = () => {
   const initialDigimons = useSelector(selectInitialDigimons);
@@ -21,19 +22,9 @@ const App = () => {
   console.log({ initialDigimons, isLoadingInitialDigimons });
 
   return (
-    <div>
-      <section className="hero is-primary">
-        <div className="hero-body">
-          <div className="container">
-            <h1 className="title">
-              Hello, World!
-            </h1>
-            <h2 className="subtitle">
-              Subtitle
-            </h2>
-          </div>
-        </div>
-      </section>
+    <div className="app">
+      <Header />
+      <main className="app__content" />
     </div>
   );
 };
