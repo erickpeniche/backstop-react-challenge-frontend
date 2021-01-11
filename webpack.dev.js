@@ -23,11 +23,18 @@ module.exports = {
     new ESLintPlugin({
       extensions: ['js', 'sass'],
       fix: true,
-      failOnError: true,
     }),
   ],
   module: {
     rules: [
+      {
+        test: /\.scss$/,
+        use: [
+          'style-loader',
+          'css-loader',
+          'sass-loader',
+        ],
+      },
       {
         test: /\.js$/,
         exclude: /(node_modules|bower_components)/,
@@ -35,7 +42,10 @@ module.exports = {
           {
             loader: 'babel-loader',
             options: {
-              presets: ['@babel/preset-env'],
+              presets: [
+                '@babel/preset-env',
+                '@babel/preset-react',
+              ],
             },
           },
         ],

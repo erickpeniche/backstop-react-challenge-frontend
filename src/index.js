@@ -1,4 +1,13 @@
-const a = { b: true, c: false };
-const b = { d: 'something' };
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App';
+import './index.scss';
 
-console.log({ ...a, ...b });
+const rootElement = document.getElementById('app');
+
+ReactDOM.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  rootElement,
+);
