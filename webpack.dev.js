@@ -11,6 +11,7 @@ module.exports = {
   entry: {
     main: './src/index.js',
   },
+  devtool: 'eval-source-map',
   output: {
     filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist'),
@@ -20,6 +21,7 @@ module.exports = {
     compress: false,
     port: 3000,
     hot: true,
+    open: true,
   },
   plugins: [
     new CleanWebpackPlugin(),
